@@ -5,7 +5,7 @@ namespace KhLib.Kh2
     /******************************************
      * Helper classes for reading and writing
      ******************************************/
-    public class BinaryArchiveBin
+    public class BinaryArchive_BIN
     {
         // struct BINARC
         public class BIN_Header

@@ -1,6 +1,6 @@
 ﻿using System.Text;
 using Xe.BinaryMapper;
-using static KhLib.Kh2.BinaryArchiveBin;
+using static KhLib.Kh2.BinaryArchive_BIN;
 
 namespace KhLib.Kh2
 {
@@ -22,7 +22,6 @@ namespace KhLib.Kh2
         /******************************************
          * Constructors
          ******************************************/
-
         public BinaryArchive()
         {
             Entries = new List<Entry>();
