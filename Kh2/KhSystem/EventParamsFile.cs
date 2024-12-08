@@ -1,9 +1,9 @@
 ﻿using KhLib.Kh2.Structs;
 using Xe.BinaryMapper;
 
-namespace KhLib.Kh2.System
+namespace KhLib.Kh2.KhSystem
 {
-    public class ReactionCountFile
+    public class EventParamsFile
     {
         /******************************************
          * Properties
@@ -14,7 +14,7 @@ namespace KhLib.Kh2.System
         /******************************************
          * Constructors
          ******************************************/
-        public ReactionCountFile()
+        public EventParamsFile()
         {
             Version = 1;
             Entries = new List<Entry>();
@@ -23,9 +23,9 @@ namespace KhLib.Kh2.System
         /******************************************
          * Functions - Static
          ******************************************/
-        public static ReactionCountFile Read(byte[] byteFile)
+        public static EventParamsFile Read(byte[] byteFile)
         {
-            ReactionCountFile file = new ReactionCountFile();
+            EventParamsFile file = new EventParamsFile();
 
             using (MemoryStream stream = new MemoryStream(byteFile))
             {
@@ -49,15 +49,13 @@ namespace KhLib.Kh2.System
             }
         }
 
-        // struct RCCOUNT
+        // ???
         public class Entry
         {
-            [Data] public ushort Id { get; set; }
-            [Data] public ushort CommandId1 { get; set; }
-            [Data] public ushort CommandId2 { get; set; }
-            [Data] public ushort CommandId3 { get; set; }
-            [Data] public ushort CommandId4 { get; set; }
-            [Data] public ushort CommandId5 { get; set; }
+            [Data] public byte Id { get; set; }
+            [Data] public byte UnkBitflag { get; set; }
+            [Data] public int Unk1 { get; set; }
+            [Data] public short Unk2 { get; set; }
         }
     }
 }

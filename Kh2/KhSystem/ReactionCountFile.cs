@@ -1,9 +1,9 @@
 ﻿using KhLib.Kh2.Structs;
 using Xe.BinaryMapper;
 
-namespace KhLib.Kh2.System
+namespace KhLib.Kh2.KhSystem
 {
-    public class FontStyleFile
+    public class ReactionCountFile
     {
         /******************************************
          * Properties
@@ -14,7 +14,7 @@ namespace KhLib.Kh2.System
         /******************************************
          * Constructors
          ******************************************/
-        public FontStyleFile()
+        public ReactionCountFile()
         {
             Version = 1;
             Entries = new List<Entry>();
@@ -23,9 +23,9 @@ namespace KhLib.Kh2.System
         /******************************************
          * Functions - Static
          ******************************************/
-        public static FontStyleFile Read(byte[] byteFile)
+        public static ReactionCountFile Read(byte[] byteFile)
         {
-            FontStyleFile file = new FontStyleFile();
+            ReactionCountFile file = new ReactionCountFile();
 
             using (MemoryStream stream = new MemoryStream(byteFile))
             {
@@ -49,11 +49,15 @@ namespace KhLib.Kh2.System
             }
         }
 
-        // struct FONTSTYLE_LIST
+        // struct RCCOUNT
         public class Entry
         {
-            [Data] public int Id { get; set; }
-            [Data(Count=19)] public uint[] Colors { get; set; }
+            [Data] public ushort Id { get; set; }
+            [Data] public ushort CommandId1 { get; set; }
+            [Data] public ushort CommandId2 { get; set; }
+            [Data] public ushort CommandId3 { get; set; }
+            [Data] public ushort CommandId4 { get; set; }
+            [Data] public ushort CommandId5 { get; set; }
         }
     }
 }

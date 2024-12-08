@@ -58,14 +58,14 @@ namespace KhLib.Kh2
             [Data] public EntryType Type { get; set; }
             [Data] public byte SubType { get; set; }
             [Data] public byte DrawPriority { get; set; }
-            [Data] public byte WeaponJoint { get; set; } // Skeleton
+            [Data] public byte WeaponJointId { get; set; } // Skeleton
             [Data(Count = 32)] public string ModelName { get; set; } // EntryName
-            [Data(Count = 32)] public string AnimationName { get; set; } // MsetFile
+            [Data(Count = 32)] public string MotionSetName { get; set; } // MsetFile
             [Data] public ushort Flags { get; set; }
             [Data] public TargetType ObjectTargetType { get; set; }
             [Data] public byte Padding { get; set; }
-            [Data] public ushort NeoStatus { get; set; } // Part
-            [Data] public ushort NeoMoveset { get; set; } // WeaponPart
+            [Data] public ushort CharacterId { get; set; } // Part
+            [Data] public ushort PlayerId { get; set; } // WPart
             [Data] public float Weight { get; set; }
             [Data] public byte SpawnLimiter { get; set; } // Cost
             [Data] public byte Page { get; set; }

@@ -1,8 +1,8 @@
 ﻿using KhLib.Kh2.Utils;
 using Xe.BinaryMapper;
-using static KhLib.Kh2.System.ShopsFile_BIN;
+using static KhLib.Kh2.KhSystem.ShopsFile_BIN;
 
-namespace KhLib.Kh2.System
+namespace KhLib.Kh2.KhSystem
 {
     public class ShopsFile
     {

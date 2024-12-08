@@ -1,4 +1,4 @@
-﻿namespace KhLib.Kh2.System
+﻿namespace KhLib.Kh2.KhSystem
 {
     public class WeaponEntriesFile
     {

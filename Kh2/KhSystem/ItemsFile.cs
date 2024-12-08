@@ -2,7 +2,7 @@
 using KhLib.Kh2.Structs;
 using Xe.BinaryMapper;
 
-namespace KhLib.Kh2.System
+namespace KhLib.Kh2.KhSystem
 {
     public class ItemsFile
     {

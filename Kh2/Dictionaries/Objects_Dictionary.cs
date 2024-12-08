@@ -64,7 +64,7 @@
 {"P_EX100_ULTF", "(P) Sora (Final)"},
 {"P_EX100_HTLF", "(P) Sora (Anti)"},
 {"P_EX110", "(P) Roxas"},
-{"P_EX200", "(P) Micky (hood)"},
+{"P_EX200", "(P) Mickey (hood)"},
 {"P_EX020", "(P) Donald"},
 {"P_EX030", "(P) Goofy"},
 {"P_BB000", "(P) Beast"},
