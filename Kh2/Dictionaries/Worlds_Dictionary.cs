@@ -22,7 +22,8 @@
             { 15 , "[WM] World Map" },
             { 16 , "[CA] Port Royal" },
             { 17 , "[TR] Space Paranoids" },
-            { 18 , "[EH] The World that Never Was" }
+            { 18 , "[EH] The World that Never Was" },
+            { 19 , "Simulated Twilight Town" },
         };
     }
 }

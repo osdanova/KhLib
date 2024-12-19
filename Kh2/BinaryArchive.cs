@@ -153,6 +153,18 @@ namespace KhLib.Kh2
             }
         }
 
+        public Entry GetFirstByName(string fileName)
+        {
+            foreach (BinaryArchive.Entry entry in Entries)
+            {
+                if (entry.Name == fileName)
+                {
+                    return entry;
+                }
+            }
+            return null;
+        }
+
         /******************************************
          * Enums
          ******************************************/

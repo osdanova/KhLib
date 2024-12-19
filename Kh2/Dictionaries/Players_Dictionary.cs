@@ -4,7 +4,7 @@
     {
         public static Dictionary<ushort, string> Instance = new Dictionary<ushort, string>
         {
-           { 0 , "[0] <NONE>" },
+           { 0 , "[0] -" },
            { 1 , "[1] Sora" },
            { 2 , "[2] Sora - Valor" },
            { 3 , "[3] Sora - Wisdom" },

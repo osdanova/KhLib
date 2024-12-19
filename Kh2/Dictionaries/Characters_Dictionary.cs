@@ -4,7 +4,7 @@
     {
         public static Dictionary<ushort, string> Instance = new Dictionary<ushort, string>
         {
-            { 0 , "[0] <NONE>" },
+            { 0 , "[0] -" },
 
             // Players
             { 1 ,  "[1] PLY - Sora" },
@@ -24,6 +24,16 @@
             { 15 , "[15] PLY - Ping" },
 
             { 101 , "[101] Interactable?" },
+
+            // These are based on battle.PlayerParams. They match up with "If first byte is 1 use player Id instead"
+            { 129 , "[129] <Valor Form?>" },
+            { 130 , "[130] <Wisdom Form?>" },
+            { 131 , "[131] <Limit Form?>" },
+            { 132 , "[132] <Master Form?>" },
+            { 133 , "[133] <Final Form?>" },
+            { 134 , "[134] <Anti Form?>" },
+            { 135 , "[135] <Lion Form?>" },
+            { 138 , "[138] <DW Roxas?>" },
 
             // Summons
             { 200 , "[200] SM - Stitch" },
