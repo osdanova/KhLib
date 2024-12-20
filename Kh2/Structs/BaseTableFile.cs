@@ -16,7 +16,7 @@ namespace KhLib.Kh2.Structs
         private int? _Version;
         private int _VersionSize;
         private int _CountSize;
-        private int _PaddingSize;
+        private int _HeaderPaddingSize;
         private int _AlignFileTo;
         public List<T> Entries { get; set; }
 
@@ -29,7 +29,7 @@ namespace KhLib.Kh2.Structs
             _CountSize = 4;
             Entries = new List<T>();
         }
-        public BaseTableFile(int versionSize, int countSize, int? version = null, string? identifier = null, int paddingSize = 0, int alignFileTo = 0)
+        public BaseTableFile(int versionSize, int countSize, int? version = null, string? identifier = null, int headerPaddingSize = 0, int alignFileTo = 0)
         {
             _VersionSize = versionSize;
             _CountSize = countSize;
@@ -38,7 +38,7 @@ namespace KhLib.Kh2.Structs
             _Version = version;
 
             Entries = new List<T>();
-            _PaddingSize = paddingSize;
+            _HeaderPaddingSize = headerPaddingSize;
 
             _AlignFileTo = alignFileTo;
         }
@@ -96,9 +96,9 @@ namespace KhLib.Kh2.Structs
                         throw new Exception("[BaseTableFile] count size not valid");
                 }
 
-                if(_PaddingSize > 0)
+                if(_HeaderPaddingSize > 0)
                 {
-                    stream.Position += _PaddingSize;
+                    stream.Position += _HeaderPaddingSize;
                 }
 
                 Entries = new List<T>();
@@ -127,13 +127,13 @@ namespace KhLib.Kh2.Structs
                 {
                     switch (_VersionSize)
                     {
-                        case 2:
+                        case 1:
                             bw.Write((byte)_Version);
                             break;
-                        case 4:
+                        case 2:
                             bw.Write((short)_Version);
                             break;
-                        case 8:
+                        case 4:
                             bw.Write((int)_Version);
                             break;
                         default:
@@ -143,22 +143,22 @@ namespace KhLib.Kh2.Structs
                     
                 switch (_CountSize)
                 {
-                    case 2:
+                    case 1:
                         bw.Write((byte)Entries.Count);
                         break;
-                    case 4:
+                    case 2:
                         bw.Write((short)Entries.Count);
                         break;
-                    case 8:
+                    case 4:
                         bw.Write((int)Entries.Count);
                         break;
                     default:
                         throw new Exception("[BaseTableFile] count size not valid");
                 }
 
-                if (_PaddingSize > 0)
+                if (_HeaderPaddingSize > 0)
                 {
-                    stream.Position += _PaddingSize;
+                    stream.Position += _HeaderPaddingSize;
                 }
 
                 foreach (var entry in Entries)

@@ -55,7 +55,7 @@ namespace KhLib.Kh2.KhSystem
 
                             Inventory inventory = new Inventory();
                             BIN_Inventory bInventory = BinaryMapping.ReadObject<BIN_Inventory>(stream);
-                            inventory.UnlockEventId = bInventory.UnlockEventId;
+                            inventory.AddMenuFlagId = bInventory.UnlockEventId;
 
                             inventory.ItemIds = new List<ushort>();
                             stream.Position = bInventory.ProductOffset;
@@ -134,7 +134,7 @@ namespace KhLib.Kh2.KhSystem
                         {
                             BIN_Inventory bInventory = new BIN_Inventory
                             {
-                                UnlockEventId = inventory.UnlockEventId,
+                                UnlockEventId = inventory.AddMenuFlagId,
                                 ProductCount = (ushort)inventory.ItemIds.Count,
                                 ProductOffset = (ushort)stream.Position
                             };
@@ -179,6 +179,7 @@ namespace KhLib.Kh2.KhSystem
             }
         }
 
+        // ShopInfo
         public class Shop
         {
             public ushort GameSignalId { get; set; }
@@ -247,9 +248,10 @@ namespace KhLib.Kh2.KhSystem
             }
         }
 
+        // ShopItemInfo
         public class Inventory
         {
-            public short UnlockEventId { get; set; }
+            public short AddMenuFlagId { get; set; }
             public List<ushort> ItemIds { get; set; }
 
             public Inventory()
