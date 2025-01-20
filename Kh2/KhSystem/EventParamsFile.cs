@@ -55,7 +55,7 @@ namespace KhLib.Kh2.KhSystem
             [Data] public byte Id { get; set; }
             [Data] public byte UnkBitflag { get; set; }
             [Data] public int Unk1 { get; set; }
-            [Data] public short Unk2 { get; set; }
+            [Data] public ushort Unk2 { get; set; }
         }
     }
 }
